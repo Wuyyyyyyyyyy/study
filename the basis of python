@@ -1,0 +1,619 @@
+#一.列表
+#1.列表及索引
+#list1=['a','b','c']
+#m=list(['a','b','c'])
+#print(list1)
+#print(m)
+#2.求索引
+#print(list1.index('a'))
+#print(list1.index('d'))
+#print(list1.index('c',0,2))#左闭右开
+#print(list1.index('b',1,2))
+#print(list1[-2])
+#3.切片操作
+#list1=[1,2,3,4,5,6,7]
+#print(list1[1:5])
+#list2=list1[1:5]
+#print(list2)
+#print(list1[1:5:2])
+#print(list1[::3])
+#4.增加操作
+#list1=[1,2,3,4,5,6,7]
+#list1.append(3)
+#print('append()函数',list1)
+#list2=11,12,13
+#ist1.extend(list2)
+#list1.append(list2)
+#print('第二次append()函数',list1)
+#print('extend函数',list1)
+#list1.insert(1,'x')
+#print(list1)
+#list2=['a','b','c']
+#list1[1:2]=list2
+#print('切片操作',list1)
+#5.删除操作
+#list1=[1,2,3,4,5,6,7]
+#list1.remove(2)
+#print('remove()函数',list1)
+#list1.pop(1)
+#print('pop()函数，删除指定位置的元素',list1)
+#list1[1:3]=[]
+#print('切片操作删除法',list1)
+#list1.clear()
+#print(list1)
+#del list1
+#print(list1)
+#6.列表的修改
+#list1=[1,2,3,4,5,6,7]
+#list1[1]='a'
+#print(list1)
+#list1[2:5]='a'
+#print(list1)
+#7.列表的排序
+#list1=[2,1,3,4,5,6,7]
+#list1.sort()
+#list1.sort(reverse=True)
+#list1.sort(reverse=False)
+#print(list1)
+#list2=sorted(list1)
+#list2=sorted(list1,reverse=True)
+#list2=sorted(list1,reverse=False)
+#print(list2)
+#8.列表生成式
+#list1=[i**3 for i in range(1,10)]
+#print(list1)
+#9.列表的遍历
+#list1=[1,2,3,4,5,6,7]
+#for i in list1:
+  #  print(i)
+#二.字典
+#1.字典的创建
+#scores={'张三':100,'李四':98,'王五':96}
+#print(scores)
+#a=dict(name='jack',age=20)
+#print(a)
+#2.字典中元素的获取
+#scores=dict(张三='100',李四='98',王五='96')
+#print(scores)
+#a=scores.get('李四')
+#print(a)
+#print(scores.get('李四'))
+#3.字典的常用操作
+#dict1=dict(张三='100',李四='98',王五='96')
+#print(100 in dict1)
+#print(100 not in dict1 )       #key的判断
+#del dict1['张三']
+#print(dict1)                   #字典中元素的删除
+#dict1['陈六']=33
+#print(dict1)                   # 字典中元素的新增
+#4.获取字典视图
+#dict1=dict(张三='100',李四='98',王五='96')
+#print(dict1.keys())
+#print(list(dict1.keys()))           #keys的获取
+#print(dict1.values())
+#print(list(dict1.values()))          #values的获取
+#print(dict1.items())
+#print(list(dict1.items()))            #keys ,values对的获取
+#5.字典的遍历
+#dict1=dict(张三='100',李四='98',王五='96')
+#for i in dict1:
+#    print(i)
+#for j in dict1.keys():
+#    print(j)
+#for k in dict1.values():
+#    print(k)
+#for i in dict1.items():
+#    print(i,type(i))
+#6.字典生成式
+#items=['a','b','c']
+#prices=[1,2,3]
+#dict2={items:prices for items,prices in zip(items,prices)}
+#print(dict2)
+#三.元组
+#1.元组的创建的方式
+#t=('a','b','c')
+#t=tuple(('a','b','c'))#需要两个括号
+#print(t)
+#2.对象内容中数据的改动
+#t=('a',[1,2,3],88)
+#t[1]='b'        #不可改动
+#list=[4,5]
+#t[1].extend(list)
+#print(t)        #列表内容可以改动
+#3.元组的遍历
+#t=tuple(('a','b','c'))
+#for i in t:
+#   print(i)
+#四 .集合
+#1.集合的创建方式
+#s={'a','b','c'}
+#s=set([1,2,3])
+#s=set(('a','b'))
+#s=set({'a':10,'b':20})  #集合只是字典中key的组合
+#print(s,type(s))
+#2.集合的相关操作
+#s1={1,2,3}
+#s2={2,3,4}
+#print(1 in s1)
+#print(1 not in s1)  #集合的判断操作，判断数在不在集合内，而不是集合的关系判断
+#s1.add(4)
+#print('add()函数',s1)
+#s1.update(s2)
+#print('update()函数',s1)
+#s1.remove(2)
+#s2.remove(1)
+#print('remove函数',s1,s2)  #指定元素不存在，则报错
+#s1.discard(1)
+#s2.discard(1)
+#print('discard()函数',s1,s2) #指定元素不存在，不报错
+#s1.pop()
+#print('pop()函数',s1)       #随机删除任意一个元素
+#s1.clear()
+#print('clear()函数',s1)
+#3.集合间的关系
+#s1={1,2,3}
+#s2={2,3,4}
+#s3={1}
+#print(s1 == s2)
+#print(s1 != s2)   #判断集合间是否相等
+#print(s1.issubset(s2))
+#print(s3.issubset(s1))   #判断是否为子集
+#print(s1.issuperset(s3))  #判断是否为超集
+#print(s1.isdisjoint(s2))  #判断是否没有交集
+#4.集合的数学操作
+#s1={1,2,3}
+#s2={2,3,4}
+#s3={1}
+#print(s1.intersection(s2))
+#print(s1 & s2)              #交集
+#print(s1.union(s2))
+#print(s1 | s2)                #并集
+#print(s1.difference(s2))
+#print(s1-s2)                #差集
+#print(s1.symmetric_difference(s2))
+#print(s1^s2)                 #对称差集
+#5.集合生成式
+#s1={i**3 for i in range(1,10)}
+#print(s1)                   #与列表生成式相比只是将方括号改为花括号
+
+
+
+
+
+
+#i=2
+#sum=0
+#while i<=10:
+  #  i+=2
+   # print(sum)
+    #sum+=i
+    
+#求100到999之间的水仙花数
+#i=100
+#while i<=999:
+   # a=i//100
+    #b=(i-a*100)//10
+    #c=(i-a*100-b*10)
+    #if a**3+b**3+c**3==i:
+     #   print(i)
+    #i+=1
+
+#求阶乘的和
+#n=int(input('请输入数字n'))
+#sum=0
+#s=1
+#for i in range(1,n+1):
+ #   s*=i
+  #  sum+=s
+#print(sum)
+#print(1+2+6+24+120)
+
+#continue的使用
+#i=1
+#while i<5:
+   # i+=1
+   # print(i)
+   # if i%2==0:
+      #  print(i,2)
+      #  continue
+      #  print(' 44444')
+    #else:
+   #  #   print('3  3  3')
+  #  print('是否到这')
+
+#星号三角形
+#for i in range(1,10):
+  #  for j in range(1,i+1):
+   #      print('*',end='\t')
+    #print()
+
+
+#九九乘法表
+#for i in range(1,10):
+#   for j in range(1,i+1):
+ #        print(str(i)+'*'+str(j)+'='+str(i*j),end='\t')
+  #  print()
+
+
+#一.字符串
+# 1.字符串的查询方法
+#s='hust is good'
+#print(s.index('s'))
+#print(s.rindex('s'))  #空格也占用索引
+#print(s.index('m'))
+#print(s.find('s'))
+#print(s.rfind('s'))
+#print(s.find('m'))
+#2.字符串的大小写转换函数
+#s='hust is God  '
+#print(s.lower())
+#print(s.upper())
+#print(s.capitalize())   #字符串第一个转为大写，其余的转为小写
+#print(s.swapcase())
+#print(s.title())
+#3.字符串的对齐函数
+#s='hust'
+#print(s.center(20,'-'))
+#print(s.ljust(5,'*'))
+#print(s.rjust(5,'*'))
+#print(s.zfill(5))
+#4.字符串的劈分
+#s1='hust is good'
+#print(s1.split())
+#s2='hust*is*good'
+#print(s2.split(sep='*',maxsplit=1 ))
+#5.字符串的判断函数
+#s1='hust1'
+#s2='123'
+#s3='\t'
+#print(s1.isalnum())
+#print(s1.isalpha())
+#print(s2.isdecimal())
+#print(s2.isnumeric())
+#print(s3.isspace())
+#6.替换与合并
+#s='hust is good'
+#list1=['h','u','s','t']
+#list2=['a','b']
+#print(s.replace('s','Q',1))
+#print('/'.join(list2))
+#7.字符串比较
+#s1='hello'
+#s2='her'
+#print(s1>s2,ord('l'),ord('r'))
+#8.字符串切片
+#s1='hust is good'
+#s2=s1[1:2:1]
+#s3=s1[::2]
+#print(s2,'\n',s3,'\n',s2+s3)
+#9.字符串的格式化
+#(1）%作为占位符
+#name='吴渊'
+#age=18
+#print('我叫%s,我今年%d岁' % (name,age))    #不少函数，print中的字符串后不用加'.'
+#(2){}作占位符，使用format函数
+#name='吴渊'
+#age=18
+#print('我叫{0},今年{1}岁。'.format(name,age))
+#(3)f-string
+#name='吴渊'
+#age=18
+#print(f'我叫{name},今年{age}岁.')
+
+
+#1.函数的建立和调用
+#def fun(a,b):
+ #   c=a+b
+ #   return c
+#print(fun(2,3))
+#def fun(a,b):
+  #  c=a**b
+   # return c
+#print(fun(3,5))
+#2.参数传递
+#(1)位置参数
+#def fun(a,b):
+ #  c=a+b
+ #  return c
+#print(fun(2,3))
+#(2)关键字参数
+#def fun(a,b):
+#    print('a=',a)
+#    print('b=',b)
+#    c=a+b
+#    return c
+#print(fun(b=2,a=5))
+#def    fun(a,b):
+#    print('a=',a)
+#    b.append('k')
+#    for i in b:
+#        print(i)
+#fun(1,['m','n'])
+#3.函数的返回值
+#(1)返回多个值时，结果为元组
+#def fun(a,b):
+   ## d=a*b
+   #   c=a+b
+    #return c,d
+#print(fun(1,3))
+#(2)没有返回值时，return可省略
+#def fun(a,b):
+#    print('a=',a)
+#    print('b=',b)
+#fun(3,4)
+#(3)返回值为一个，则返回原类型
+#def  fun(a):
+#    a.append('**')
+#    return a
+#list=['$']
+#print(fun(list),type(list))
+#4.函数的参数定义
+#(1)函数的默认值参数
+#def fun(a,b='渊'):              #默认值写在开头
+#    c=a+b
+#    return c
+#print(fun('吴'))
+#(2)个数可变的位置参数
+#def fun(*a):
+  #  return a
+#print(fun(1,2,3,4))       #输出为元组
+#(3)个数可变的关键字参数
+#def fun(**a):
+  #  return a
+#print(fun(a=1,b=2,c=3))   #输出为字典
+#(4)两者都有时，个数可变的位置参数放在个数可变的关键字参数之前
+#def fun(*a,**b):
+#    return a,b
+#print(fun(1,2,3,a=1,b=2,c=3))    #输出为一个由字典和元组组成的元组
+#5.变量的作用域
+#def fun():
+#    global a
+#    a=1                       #只能先使用global关键词，再对a进行赋值
+#    print('a=',a)
+#fun()
+#print(a)
+#6.递归函数
+#(1)求阶乘
+#def fun(n):
+#    if n==1:
+ #       return 1
+#    else :
+ #       sum=n*fun(n - 1)
+#        return sum
+#print(fun(6))
+#(2)斐波那契数列
+#def fun(n):
+#    if n==1:
+#        return 1
+ #   elif n==2:
+ #       return 1
+#    else :
+#        sum=fun(n-1)+fun(n-2)
+#        return sum
+#print(fun(5))
+
+
+
+#def fun(*t):
+#    for i in t:
+#        print(t[0])
+#print(fun(1,2,3))
+
+
+#1.编写函数，求1**2-2**2+……+99**2的值.
+
+#def fun (n):
+#    sum=0
+ #   for i in range(1,n+1):
+ #       if i%2!=0 :
+ #           a=i**2
+  #          sum+=a
+ ##       else:
+#            a=-(i**2)
+#            sum+=a
+#    return sum
+#print(fun(99))
+
+#2.编写函数，输出任意多个实数，返回一个元组，其中第一个元素为所有参数的平均值，其他元素为所有参数中大于平均数的实数
+
+#def  fun(*t):
+    #print(t)                    #t就是一个元组
+#    sum=0
+#    m=0
+#    over=[]                     #使用列表，使两个要求能集中在一个列表内
+#    for i in t:                  #对输入的元组进行遍历
+#        print(i)
+#        global average
+#        m+=1
+#        sum+=i
+#    average=sum/m
+#    over.append(average)
+#    for i in t:
+#        print(i)
+#        if i > average:
+ #           over.append(i)
+#    return   tuple(over)                 #return放在与for同一级处，避免for循环只执行了一次就直接输出（$)
+#print(fun(1,2))
+
+#3.编写一个程序，它将找到所有这些数字:可被7整除，但不是5的倍数，2000年至3200年(包括在内)。得到的数字应按逗号分隔的顺序打印在一行上.
+
+#for i in range(2000,3201):
+#    if i%7==0 and i%5!=0:
+#        print(i,end=',')
+
+#4.使用列表推导来对列表中的每个奇数。 该列表由一系列逗号分隔的数字输入。假设为程序提供了以下输入：1,2,3,4,5,6,7,8,9然后，输出应该是：1,3,5,7,9
+
+#list1=list(input('请输入数字：'))
+#print(list1)
+#list2=[]
+#for i in list1:
+#    if i.isdigit()  :
+       # print('你输入的数字为:',i,type(i))
+#        if int(i)%2!=0:
+ #           list2.append(i)
+#print(','.join(list2))                       #加入列表，使用字符串加入函数，使逗号使用符合题目要求
+
+
+#1.例一
+'''class Student(object):
+    num=0
+
+    def __init__(self,name):                  #用的是两个下划线
+        self.name=name
+stu=Student(1)
+print(stu.name)
+print(stu.num)
+print(Student.num)'''
+#2.学生类别的模板
+'''class Student:                     #Student为类的名称（类名），由一个或多个单词组成，每个单词首字母大写，其余小写
+    native_pace='湖北'              #直接写在类里的变量，称为类属性
+   
+   
+   #赋值操作
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+        
+        
+      #  实例方法
+    def eat(self):
+        print('学生在吃饭……')
+        
+        
+        #静态方法
+    @staticmethod
+    def method():
+        print('我使用了staticmethod进行修饰，所以我是静态方法')
+        
+       #类方法 
+    @classmethod
+    def cm(cls):
+        print('我是类方法，因为我使用了classmethod进行修饰')'''
+#3.例三(课本P100)
+'''class Animal():
+    special='都有生命'               #类属性
+    def __init__(self,kind,name):
+        self.kind=kind
+        self.name=name
+
+    def eat(self):
+        print('动物会吃……')
+    def drink(self):
+        print('动物会喝……')
+    def run(self):
+        print('动物会跑……')
+    def sleep(self):
+        print('动物会睡觉……')
+    def dname(self):
+        print('动物的名称为{0}'.format(self.name))
+    def dkind(self):
+        print('动物的种类为{0}'.format(self.kind))
+#ani1=Animal('猫类','老虎')
+#print(ani1.eat())
+#print(ani1.sleep())
+#print(ani1.dname())       #实例方法中含有pirnt，而这里也有一个print,故会输出一个none
+#ani1.dname()              #调用实例方法时并为使用print，故没有输出none
+#print(ani1.special)        #打印类属性
+class Dog(Animal):
+    def __init__(self,kind,name,colo):
+        super().__init__(kind,name)      #通过内置函数super()来实现对父类公有属性的访问
+        self.colo=colo
+    def bark(self):
+        print('狗狗能叫……')
+    def color(self):
+        print('狗狗的颜色为{0}'.format(self.colo))
+#dog1=Dog()             #子类中需要填入父类的实用属性(子类必须有父类的特征，故括号中要填入name与kind）
+#dog2=Dog('犬类','狗','黄色')
+#print(dog2.name)
+#print(dog2.colo)
+#super(Dog,dog2).dname()  #通过"super(子类名，变量名).父类方法名"来调用
+#dog2.color()
+class XiaoTianQuan(Dog):
+    def fly(self):
+        print('哮天犬会飞……')         '''
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
